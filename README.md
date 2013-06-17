@@ -1,4 +1,4 @@
 wpfdn
 =====
 
-WordPress theme built with Foundation 4
+WPFDN Theme
