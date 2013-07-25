@@ -1,5 +1,7 @@
 <?php
 
+
+add_action( 'after_setup_theme', 'wpfdn_setup' );
 function wpfdn_setup() {
     /*
      * Makes WpFdn available for translation.
@@ -19,6 +21,10 @@ function wpfdn_setup() {
     // This theme supports a variety of post formats.
     add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
+    // This theme uses a custom image size for featured images, displayed on "standard" posts.
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
+
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
         array(
@@ -26,12 +32,39 @@ function wpfdn_setup() {
             'secondary' => __('Secondary Menu', 'wpfdn')
         )
     );
-
-    // This theme uses a custom image size for featured images, displayed on "standard" posts.
-    add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 }
-add_action( 'after_setup_theme', 'wpfdn_setup' );
+
+//// function create_custom_taxonomies() {
+//     $args = array('label' => __('Categories'),
+//             'rewrite' => array( 'slug' => 'featured-projects' ),
+//             'hierarchical' => false);
+//     register_taxonomy('featured-project', 'wpfdn-portfolio', $args );
+//     register_taxonomy_for_object_type('featured-projects', 'wpfdn-portfolio');
+// }
+//add_action('init', 'create_custom_taxonomies');
+
+function create_custom_post_types() {
+    register_post_type( 'wpfdn-portfolio',
+        array(
+            'labels' => array(
+                'name' => __( 'Portfolio' ),
+                'singular_name' => __( 'Portfolio' )
+            ),
+            'rewrite' => array( 'slug' => 'portfolio' ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array(
+                    'title',
+                    'editor',
+                    'thumbnail',
+                    'excerpt',
+                    'custom-fields'
+            ),
+            'taxonomies' => array('post_tag')
+        )
+    );
+}
+add_action('init', 'create_custom_post_types');
 
 require( get_template_directory() . '/includes/wpfdn-foundation.php' );       // make foundation work in WordPress
 
@@ -46,70 +79,13 @@ function wpfdn_widgets_init() {
         'after_title' => '</h4>',
     ) );
 
-    register_sidebar( array(
-        'name' => __( 'Footer Area One', 'wpfdn' ),
-        'id' => 'sidebar-footer-1',
-        'description' => __( 'An optional widget area for your site footer', 'wpfdn' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => "</aside>",
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
-    ) );
-
-    register_sidebar( array(
-        'name' => __( 'Footer Area Two', 'wpfdn' ),
-        'id' => 'sidebar-footer-2',
-        'description' => __( 'An optional widget area for your site footer', 'wpfdn' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => "</aside>",
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
-    ) );
-
-    register_sidebar( array(
-        'name' => __( 'Footer Area Three', 'wpfdn' ),
-        'id' => 'sidebar-footer-3',
-        'description' => __( 'An optional widget area for your site footer', 'wpfdn' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => "</aside>",
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
-    ) );
-
 }
 add_action( 'widgets_init', 'wpfdn_widgets_init' );
 
-function wpfdn_footer_sidebar_columns() {
-
-    // default value
-    $required_columns = 'large-4 columns';
-
-    // only the first sidebar is active, go full-width
-    if (     is_active_sidebar( 'sidebar-footer-1' )
-        && ! is_active_sidebar( 'sidebar-footer-2' )
-        && ! is_active_sidebar( 'sidebar-footer-3') ) {
-        $required_columns = 'large-12 columns';
-    }
-    // the first one is disabled, go half-half
-    else if (   ! is_active_sidebar( 'sidebar-footer-1' )
-             &&   is_active_sidebar( 'sidebar-footer-2')
-             &&   is_active_sidebar( 'sidebar-footer-3' ) ) {
-        $required_columns = 'large-6 columns';
-    }
-    // the last one is disabled, go eight-four
-    else if (   ! is_active_sidebar( 'sidebar-footer-3' )
-             &&   is_active_sidebar( 'sidebar-footer-2' )
-             &&   is_active_sidebar( 'sidebar-footer-1' ) ) {
-        $required_columns = 'large-8 columns';
-    }
-    // the middle on is disabled, go four-eight
-    else if (   ! is_active_sidebar( 'sidebar-footer-2' )
-            &&    is_active_sidebar( 'sidebar-footer-3' )
-            &&    is_active_sidebar( 'sidebar-footer-1' ) ) {
-        $required_columns = 'large-4 columns reverse';
-    }
-
-    return $required_columns;
+function new_excerpt_more( $more ) {
+    return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Read More</a>';
 }
+add_filter('excerpt_more', 'new_excerpt_more');
+
 
 ?>

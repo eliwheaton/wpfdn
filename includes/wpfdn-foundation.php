@@ -5,7 +5,6 @@
  * Custom output to enable the the ZURB Navigation style.
  * Courtesy of Kriesi.at. http://www.kriesi.at/archives/improve-your-wordpress-navigation-menu-output
  *
- * @since  required+ Foundation 0.1.0
  *
  * @return string the code of the full navigation menu
  */

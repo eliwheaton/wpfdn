@@ -25,6 +25,3 @@
 
 <?php get_template_part('nav'); ?>
 
-<div class="row"> <!-- site-wrap -->
-
-    <div class="large-12 columns centered"> 

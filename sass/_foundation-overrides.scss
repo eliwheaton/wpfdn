@@ -28,8 +28,8 @@ $em-base: 16px !default;
 
 $default-float: left;
 
-$body-bg: #fff;
-// $body-font-color: #222;
+// $body-bg: #fff;
+$body-font-color: #204054;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -139,7 +139,7 @@ $body-bg: #fff;
 // $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: #204054;
 // $header-line-height: 1.4;
 // $header-top-margin: .2em;
 // $header-bottom-margin: .5em;
@@ -1203,7 +1203,7 @@ $list-side-margin: emCalc(30px);
 
 // Background color for the top bar
 
-// $topbar-bg: #111 !default;
+$topbar-bg: #204054 !default;
 
 // Height and margin
 

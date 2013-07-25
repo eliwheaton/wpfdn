@@ -1,11 +1,32 @@
 /* line 3, ../sass/_main.scss */
-.entry-content {
-  margin-top: 1.25em;
+.pad-top {
+  margin-top: 1.25em !important;
 }
 
 /* line 7, ../sass/_main.scss */
 .circle-img {
   border-radius: 50%;
+}
+
+/* line 11, ../sass/_main.scss */
+.footer-wrap {
+  width: 100%;
+  background-color: #204054;
+  color: #fff;
+}
+
+/* line 17, ../sass/_main.scss */
+.footer-social img {
+  padding: 5px;
+}
+
+/* line 21, ../sass/_main.scss */
+.footer-copyright {
+  font-weight: 100;
+  font-size: 12px;
+  margin-bottom: 20px;
+  display: block;
+  letter-spacing: 2px;
 }
 
 /* normalize.css v2.1.1 | MIT License | git.io/normalize */
@@ -440,7 +461,7 @@ body {
 /* line 249, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_global.scss */
 body {
   background: white;
-  color: #222222;
+  color: #204054;
   padding: 0;
   margin: 0;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -1979,7 +2000,7 @@ p.lead {
 /* line 115, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_type.scss */
 .subheader {
   line-height: 1.4;
-  color: #6f6f6f;
+  color: #5093bd;
   font-weight: 300;
   margin-top: 0.2em;
   margin-bottom: 0.5em;
@@ -2050,7 +2071,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-style: normal;
-  color: #222222;
+  color: #204054;
   text-rendering: optimizeLegibility;
   margin-top: 0.2em;
   margin-bottom: 0.5em;
@@ -2059,7 +2080,7 @@ h1, h2, h3, h4, h5, h6 {
 /* line 191, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_type.scss */
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-size: 60%;
-  color: #6f6f6f;
+  color: #5093bd;
   line-height: 0;
 }
 
@@ -2202,7 +2223,7 @@ abbr,
 acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: #222222;
+  color: #204054;
   border-bottom: 1px dotted #dddddd;
   cursor: help;
 }
@@ -2223,7 +2244,7 @@ blockquote {
 blockquote cite {
   display: block;
   font-size: 0.8125em;
-  color: #555555;
+  color: #3c789e;
 }
 /* line 319, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_type.scss */
 blockquote cite:before {
@@ -2232,14 +2253,14 @@ blockquote cite:before {
 /* line 324, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_type.scss */
 blockquote cite a,
 blockquote cite a:visited {
-  color: #555555;
+  color: #3c789e;
 }
 
 /* line 330, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_type.scss */
 blockquote,
 blockquote p {
   line-height: 1.6;
-  color: #6f6f6f;
+  color: #5093bd;
 }
 
 /* Microformats */
@@ -4314,7 +4335,7 @@ form.custom .custom.disabled {
 /* line 67, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
 .contain-to-grid {
   width: 100%;
-  background: #111111;
+  background: #204054;
 }
 /* line 71, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
 .contain-to-grid .top-bar {
@@ -4336,7 +4357,7 @@ form.custom .custom.disabled {
   height: 45px;
   line-height: 45px;
   position: relative;
-  background: #111111;
+  background: #204054;
   margin-bottom: 1.875em;
 }
 /* line 92, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
@@ -4439,7 +4460,7 @@ form.custom .custom.disabled {
 }
 /* line 189, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
 .top-bar.expanded .title-area {
-  background: #111111;
+  background: #204054;
 }
 /* line 192, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
 .top-bar.expanded .toggle-topbar a {
@@ -4472,8 +4493,8 @@ form.custom .custom.disabled {
 /* line 227, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
 .top-bar-section .divider,
 .top-bar-section [role="separator"] {
-  border-bottom: solid 1px #2b2b2b;
-  border-top: solid 1px black;
+  border-bottom: solid 1px #2e5c79;
+  border-top: solid 1px #12242f;
   clear: both;
   height: 1px;
   width: 100%;
@@ -4491,7 +4512,7 @@ form.custom .custom.disabled {
 }
 /* line 246, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.hover {
-  background: #090909;
+  background: #1c3849;
   color: white;
 }
 /* line 252, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
@@ -4529,7 +4550,7 @@ form.custom .custom.disabled {
 }
 /* line 281, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li.active > a {
-  background: #090909;
+  background: #1c3849;
   color: white;
 }
 /* line 288, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
@@ -4615,7 +4636,7 @@ form.custom .custom.disabled {
 @media only screen and (min-width: 58.75em) {
   /* line 359, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
   .top-bar {
-    background: #111111;
+    background: #204054;
     *zoom: 1;
     overflow: visible;
   }
@@ -4652,7 +4673,7 @@ form.custom .custom.disabled {
   }
   /* line 379, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
   .top-bar.expanded {
-    background: #111111;
+    background: #204054;
   }
 
   /* line 382, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
@@ -4686,7 +4707,7 @@ form.custom .custom.disabled {
   .top-bar-section li a:not(.button) {
     padding: 0 15px;
     line-height: 45px;
-    background: #111111;
+    background: #204054;
   }
   /* line 407, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
   .top-bar-section li a:not(.button).hover {
@@ -4740,12 +4761,12 @@ form.custom .custom.disabled {
     line-height: 1;
     white-space: nowrap;
     padding: 7px 15px;
-    background: #1e1e1e;
+    background: #274e66;
   }
   /* line 460, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown li label {
     white-space: nowrap;
-    background: #1e1e1e;
+    background: #274e66;
   }
   /* line 466, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown li .dropdown {
@@ -4756,15 +4777,15 @@ form.custom .custom.disabled {
   .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
     border-bottom: none;
     border-top: none;
-    border-right: solid 1px #2b2b2b;
-    border-left: solid 1px black;
+    border-right: solid 1px #2e5c79;
+    border-left: solid 1px #12242f;
     clear: none;
     height: 45px;
     width: 0px;
   }
   /* line 484, ../../../../../../../../../Users/eliwheaton/.rvm/gems/ruby-1.9.3-p194/gems/zurb-foundation-4.2.2/scss/foundation/components/_top-bar.scss */
   .top-bar-section .has-form {
-    background: #111111;
+    background: #204054;
     padding: 0 15px;
     height: 45px;
   }

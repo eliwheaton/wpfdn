@@ -1,11 +1,14 @@
-    <?php get_sidebar( 'footer' ); ?>
+    <?php get_template_part('custom-footer'); ?>
 
 
-    </div>
-</div>  <!-- close site-wrap -->
+    
+<script>
+    // Assign jQuery to the $ because WP doesn't
+    $ = jQuery;
+</script>
 
 <script>
-    document.write('<script src=<?php echo get_template_directory_uri(); ?>/javascripts/vendor/' + ('__proto__' in {} ? 'zepto.js' : 'jquery.js') + '><\/script>');
+    /* document.write('<script src=<?php echo get_template_directory_uri(); ?>/javascripts/vendor/' + ('__proto__' in {} ? 'zepto.js' : 'jquery.js') + '><\/script>'); */
 </script>
 
 <script src="<?php echo get_template_directory_uri(); ?>/javascripts/foundation/foundation.js"></script>
@@ -28,7 +31,7 @@
 $(document).foundation();
 </script>
 
-
 <?php wp_footer(); ?>
+
 </body>
 </html>
