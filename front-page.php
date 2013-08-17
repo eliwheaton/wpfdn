@@ -5,11 +5,11 @@ get_header(); ?>
 
 <div class="row pad-top">
     <div class="large-4 columns">
-        <img src="/wp-content/uploads/2012/02/eli-wavy.jpg" alt="eli wheaton" class="circle-img"  />
+        <img src="" alt="" class="circle-img"  />
     </div>
     <div class="large-8 columns">
-        <h3>Hello, I'm so glad you found me.</h3>
-        <p>I'm Eli, a freelance web developer in Tampa, Florida with 10+ years of experience. I've been writing code professionally ever since I graduated from the University of Florida in 2003. I work closely with individuals and small businesses in order to help them create an online presence. I put this website up as a way to showcase my skills and get in touch with more clients that need web services. Feel free to look around, and you can always contact me if you have any questions. Thanks for visiting!</p>
+        <h3></h3>
+        <p></p>
     </div>
 </div>
 
