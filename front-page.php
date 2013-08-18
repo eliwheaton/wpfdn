@@ -28,7 +28,7 @@ get_header(); ?>
 <div class="row">
     <?php
     global $more;
-    $args = 'post_type=eliwheaton_portfolio&posts_per_page=2&tag=featured-projects';
+    $args = 'post_type=wpfdn-portfolio&posts_per_page=2&tag=featured-projects';
     $loop = new WP_Query($args);
     remove_filter('the_content', 'wpautop');
     while ($loop->have_posts()): $loop->the_post(); $more = 0; ?>
