@@ -34,53 +34,7 @@ function wpfdn_setup() {
     );
 }
 
-//// function create_custom_taxonomies() {
-//     $args = array('label' => __('Categories'),
-//             'rewrite' => array( 'slug' => 'featured-projects' ),
-//             'hierarchical' => false);
-//     register_taxonomy('featured-project', 'wpfdn-portfolio', $args );
-//     register_taxonomy_for_object_type('featured-projects', 'wpfdn-portfolio');
-// }
-//add_action('init', 'create_custom_taxonomies');
-
-function create_custom_post_types() {
-    register_post_type( 'wpfdn-portfolio',
-        array(
-            'labels' => array(
-                'name' => __( 'Portfolio' ),
-                'singular_name' => __( 'Portfolio' )
-            ),
-            'rewrite' => array( 'slug' => 'portfolio' ),
-            'public' => true,
-            'has_archive' => true,
-            'supports' => array(
-                    'title',
-                    'editor',
-                    'thumbnail',
-                    'excerpt',
-                    'custom-fields'
-            ),
-            'taxonomies' => array('post_tag')
-        )
-    );
-}
-add_action('init', 'create_custom_post_types');
-
 require( get_template_directory() . '/includes/wpfdn-foundation.php' );       // make foundation work in WordPress
-
-function wpfdn_widgets_init() {
-
-    register_sidebar( array(
-        'name' => __( 'Main Sidebar', 'wpfdn' ),
-        'id' => 'sidebar-main',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => "</aside>",
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
-    ) );
-
-}
-add_action( 'widgets_init', 'wpfdn_widgets_init' );
 
 function new_excerpt_more( $more ) {
     return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Read More</a>';
